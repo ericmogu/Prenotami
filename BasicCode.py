@@ -13,7 +13,7 @@ with sync_playwright() as playwright:
     page.fill('#email', 'your_email@example.com')
     page.click('#request_otp')
 
-    # Step 2: Fetch OTP from email using IMAPClient for 
+    # Step 2: Fetch OTP from email using IMAPClient for users and more
     with imapclient.IMAPClient('imap.gmail.com') as client:
         client.login('your_email@example.com', 'your_password')
         client.select_folder('INBOX')
