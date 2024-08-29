@@ -2,6 +2,7 @@ from playwright.sync_api import sync_playwright
 import imapclient
 import pyzmail
 
+
 # Set up Playwright and launch the browser
 with sync_playwright() as playwright:
     browser = playwright.chromium.launch(headless=True)
@@ -12,7 +13,7 @@ with sync_playwright() as playwright:
     page.fill('#email', 'your_email@example.com')
     page.click('#request_otp')
 
-    # Step 2: Fetch OTP from email using IMAPClient
+    # Step 2: Fetch OTP from email using IMAPClient for 
     with imapclient.IMAPClient('imap.gmail.com') as client:
         client.login('your_email@example.com', 'your_password')
         client.select_folder('INBOX')
